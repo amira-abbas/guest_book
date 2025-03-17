@@ -34,6 +34,7 @@ RUN python3 -m pip install -r requirements.txt --no-cache-dir
 RUN \
     apk update && \
     apk add postgresql-libs && \
+    apk add postgresql-client && \
     apk add --virtual .build-deps gcc musl-dev postgresql-dev && \
     apk --purge del .build-deps
 
