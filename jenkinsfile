@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
-        IMAGE_NAME = "amira-abbas/guestbook"
+        IMAGE_NAME = "amira-abbas/guest_book"
     }
     stages {
         stage('Clone Repository') {
