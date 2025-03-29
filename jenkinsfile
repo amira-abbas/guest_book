@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', 
+                    credentialsId: 'github-credentials-id', 
+                    url: 'https://github.com/amira-abbas/guest_book.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker build -t amira-abbas/guestbook:latest .'
+            }
+        }
+    }
+}
